@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio creativo de Arturo Carter: diseño, desarrollo web y dirección visual.">
+  <title>Arturo Carter — Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#171821;--panel:#20212c;--panel2:#272936;--line:#343644;--text:#f4f4f7;--muted:#9b9daa;--yellow:#f5d329;--yellow2:#ffe66b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}button{font:inherit}.layout{max-width:1440px;margin:auto;min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr)}
+    .sidebar{background:#1d1f29;border-right:1px solid #30313d;padding:28px 24px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column;z-index:5}
+    .profile{text-align:center;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .avatar{width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid #414351;padding:3px}
+    .online{display:inline-block;width:10px;height:10px;background:var(--yellow);border:2px solid #1d1f29;border-radius:50%;margin-left:-17px;position:relative;top:-4px}
+    .profile h2{font:700 18px "Space Grotesk";margin:10px 0 3px}.profile p{color:var(--muted);font-size:11px;line-height:1.6;margin:0}
+    .side-title{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:#777b8b;margin:23px 0 13px;font-weight:700}
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:12px 8px;font-size:11px}.details span:nth-child(odd){color:var(--muted)}.details span:nth-child(even){text-align:right}
+    .languages{display:flex;justify-content:space-between;gap:8px}.language{text-align:center;font-size:10px;color:var(--muted)}
+    .ring{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;margin:0 auto 7px;background:conic-gradient(var(--yellow) 0 85%,#414351 85%);position:relative}
+    .ring:before{content:"";position:absolute;inset:4px;border-radius:50%;background:#1d1f29}.ring b{position:relative;color:white;font-size:10px}
+    .skill{margin:14px 0}.skill-head{display:flex;justify-content:space-between;font-size:10px;margin-bottom:7px}.skill-head span:last-child{color:var(--muted)}.track{height:4px;background:#3b3d49;border-radius:8px;overflow:hidden}.track i{display:block;height:100%;background:var(--yellow);border-radius:8px}
+    .side-tags{display:flex;flex-wrap:wrap;gap:6px}.side-tags span{font-size:9px;color:#bfc1cb;background:#292b37;padding:6px 8px;border-radius:4px}
+    .socials{display:flex;gap:15px;margin-top:auto;padding-top:24px;color:#aeb0bb;font-size:11px}.socials a:hover{color:var(--yellow)}
+    main{padding:26px 28px 50px;min-width:0}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.crumb{font-size:11px;color:var(--muted)}.crumb b{color:var(--yellow);font-weight:600}.menu{border:1px solid var(--line);background:var(--panel);color:white;border-radius:8px;padding:9px 12px;cursor:pointer}
+    .hero{min-height:330px;border-radius:10px;overflow:hidden;position:relative;background:linear-gradient(90deg,rgba(21,22,31,.94) 0%,rgba(21,22,31,.78) 46%,rgba(21,22,31,.08) 100%),url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=85") center/cover;display:flex;align-items:center;padding:40px;isolation:isolate}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,21,30,.25),transparent 50%);z-index:-1}
+    .hero-copy{max-width:510px;z-index:1}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);font-weight:700}.hero h1{font:700 clamp(32px,4vw,51px)/1.05 "Space Grotesk";margin:13px 0 14px;max-width:480px}.hero p{font-size:12px;line-height:1.8;color:#d1d2d9;max-width:380px}.code-line{font:600 11px monospace;color:var(--yellow2);margin:15px 0 23px}.btn{display:inline-flex;align-items:center;gap:9px;background:var(--yellow);color:#171821;border:0;border-radius:3px;padding:13px 19px;font-size:10px;letter-spacing:1px;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-3px);background:var(--yellow2);box-shadow:0 8px 24px #f5d32933}
+    .hero-person{position:absolute;right:5%;bottom:0;height:96%;max-width:42%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 8px 24px #0008);mix-blend-mode:normal}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 30px}.stat{display:flex;align-items:center;gap:9px;padding:10px 4px}.stat strong{font:700 22px "Space Grotesk";color:var(--yellow)}.stat span{font-size:10px;color:#c4c5ce;line-height:1.35}
+    section{scroll-margin-top:20px;margin-top:30px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:15px}.section-head h2{font:700 20px "Space Grotesk";margin:0}.section-head p{font-size:10px;color:var(--muted);margin:5px 0 0}.small-link{font-size:10px;color:var(--yellow)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service{background:var(--panel2);border:1px solid #30323e;padding:20px 18px;border-radius:5px;transition:.25s}.service:hover,.project:hover{transform:translateY(-5px);border-color:#71662b}.service-icon{width:34px;height:34px;border-radius:8px;background:#393724;color:var(--yellow);display:grid;place-items:center;font-size:16px;margin-bottom:14px}.service h3{font:600 13px "Space Grotesk";margin:0 0 9px}.service p{font-size:10px;color:var(--muted);line-height:1.7;margin:0 0 14px}.service a{font-size:9px;color:var(--yellow);font-weight:700;letter-spacing:.7px}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.project{background:var(--panel);border:1px solid #30323e;border-radius:6px;overflow:hidden;transition:.25s}.project img{width:100%;height:145px;object-fit:cover;display:block;filter:saturate(.8)}.project-body{padding:13px}.project small{color:var(--yellow);font-size:9px;text-transform:uppercase;letter-spacing:1px}.project h3{font:600 13px "Space Grotesk";margin:7px 0}.project p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}.about-card,.contact-card{background:var(--panel);border:1px solid #30323e;border-radius:6px;padding:22px}.about-card h3{font:600 16px "Space Grotesk";margin:0 0 10px}.about-card p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}.timeline{border-left:1px solid #55513a;padding-left:18px}.timeline-item{position:relative;margin-bottom:18px}.timeline-item:before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--yellow);left:-23px;top:4px}.timeline-item b{font-size:11px}.timeline-item span{float:right;color:var(--yellow);font-size:9px}.timeline-item p{font-size:10px;color:var(--muted);margin:5px 0 0}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:14px}.contact-info{background:linear-gradient(145deg,#292a37,#20212c);padding:22px;border-radius:6px}.contact-info h3{font:600 17px "Space Grotesk";margin:0 0 8px}.contact-info p{font-size:10px;color:var(--muted);line-height:1.7}.contact-line{font-size:10px;margin-top:16px;color:#d6d7df}.contact-line b{display:block;color:var(--yellow);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:11px}input,textarea{width:100%;background:#191a23;border:1px solid #393b48;border-radius:4px;padding:12px;color:white;font:11px "DM Sans";outline:none}input:focus,textarea:focus{border-color:var(--yellow)}textarea{grid-column:1/-1;min-height:95px;resize:vertical}form button{justify-self:start}
+    footer{border-top:1px solid var(--line);margin-top:35px;padding-top:18px;display:flex;justify-content:space-between;color:#777b89;font-size:9px}
+    .to-top{position:fixed;right:22px;bottom:20px;background:var(--yellow);color:#171821;width:38px;height:38px;border:0;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 5px 20px #0006}
+    @media(max-width:1000px){.layout{grid-template-columns:215px 1fr}.sidebar{padding:24px 17px}main{padding:22px}.hero{min-height:300px;padding:30px}.hero-person{right:0;max-width:40%}.services,.projects{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.layout{display:block}.sidebar{position:relative;height:auto;padding:20px;display:block}.profile{display:grid;grid-template-columns:70px 1fr;text-align:left;align-items:center;column-gap:12px;padding-bottom:15px}.avatar{width:66px;height:66px;grid-row:span 2}.profile h2{align-self:end;margin:0}.profile p{align-self:start}.online{display:none}.side-title{margin-top:17px}.details,.languages,.skills,.side-tags,.socials{max-width:450px}.socials{margin-top:10px;padding-top:10px}.skills{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}main{padding:18px 14px 35px}.hero{min-height:390px;align-items:flex-start;padding:25px;background-position:center}.hero-copy{max-width:100%}.hero h1{max-width:330px}.hero p{max-width:290px}.hero-person{height:52%;max-width:62%;right:0}.stats{grid-template-columns:repeat(2,1fr);gap:3px}.services,.projects{grid-template-columns:1fr 1fr}.about-grid,.contact-wrap{grid-template-columns:1fr}}
+    @media(max-width:440px){.services,.projects{grid-template-columns:1fr}.project img{height:180px}.hero{min-height:410px}.hero-person{height:45%;max-width:70%}.section-head h2{font-size:18px}footer{gap:10px;flex-direction:column}}
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="profile">
+      <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85" alt="Retrato de Arturo Carter">
+      <span class="online"></span>
+      <h2>Arturo Carter</h2>
+      <p>Front-end Developer<br>UI/UX Designer</p>
+    </div>
+    <div class="side-title">Información personal</div>
+    <div class="details"><span>Residencia</span><span>Canadá</span><span>Ciudad</span><span>Toronto</span><span>Edad</span><span>26 años</span><span>Disponibilidad</span><span style="color:var(--yellow)">Freelance</span></div>
+    <div class="side-title">Idiomas</div>
+    <div class="languages">
+      <div class="language"><div class="ring"><b>90%</b></div>Francés</div>
+      <div class="language"><div class="ring"><b>100%</b></div>Inglés</div>
+      <div class="language"><div class="ring"><b>70%</b></div>Español</div>
+    </div>
+    <div class="side-title">Mis habilidades</div>
+    <div class="skills">
+      <div class="skill"><div class="skill-head"><span>HTML</span><span>95%</span></div><div class="track"><i style="width:95%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>CSS</span><span>90%</span></div><div class="track"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>JavaScript</span><span>85%</span></div><div class="track"><i style="width:85%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>UI / UX</span><span>88%</span></div><div class="track"><i style="width:88%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>WordPress</span><span>80%</span></div><div class="track"><i style="width:80%"></i></div></div>
+      <div class="skill"><div class="skill-head"><span>Figma</span><span>92%</span></div><div class="track"><i style="width:92%"></i></div></div>
+    </div>
+    <div class="side-title">Tecnologías</div>
+    <div class="side-tags"><span>Bootstrap</span><span>Responsive</span><span>Git</span><span>Figma</span><span>SEO</span></div>
+    <div class="socials"><a href="https://www.linkedin.com/" target="_blank" rel="noopener">in</a><a href="https://github.com/" target="_blank" rel="noopener">GH</a><a href="https://www.behance.net/" target="_blank" rel="noopener">Be</a><a href="https://dribbble.com/" target="_blank" rel="noopener">Dr</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">◎</a></div>
+  </aside>
+
+  <main>
+    <div class="topbar"><div class="crumb">Inicio <b>/ Portafolio</b></div><button class="menu" aria-label="Ir a contacto" onclick="document.querySelector('#contacto').scrollIntoView({behavior:'smooth'})">☰</button></div>
+    <header class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">Diseño · Código · Creatividad</div>
+        <h1>Descubre mi increíble espacio creativo</h1>
+        <p>Creo experiencias digitales que combinan diseño atractivo, tecnología y soluciones pensadas para las personas.</p>
+        <div class="code-line">&lt;code&gt; I build digital experiences. &lt;/code&gt;</div>
+        <a class="btn" href="#proyectos">EXPLORAR PORTAFOLIO <span>↗</span></a>
+      </div>
+      <img class="hero-person" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=650&q=90" alt="Retrato de un diseñador">
+    </header>
+
+    <div class="stats">
+      <div class="stat"><strong>10+</strong><span>Años de<br>experiencia</span></div>
+      <div class="stat"><strong>143</strong><span>Proyectos<br>completados</span></div>
+      <div class="stat"><strong>114</strong><span>Clientes<br>satisfechos</span></div>
+      <div class="stat"><strong>20+</strong><span>Premios y<br>reconocimientos</span></div>
+    </div>
+
+    <section id="servicios">
+      <div class="section-head"><div><h2>Mis servicios</h2><p>Lo que puedo hacer por tu próximo proyecto</p></div><a class="small-link" href="#contacto">TRABAJEMOS JUNTOS ↗</a></div>
+      <div class="services">
+        <article class="service"><div class="service-icon">⌘</div><h3>Desarrollo web</h3><p>Sitios modernos, rápidos y adaptables a cualquier dispositivo. Código limpio y una experiencia sencilla para tus usuarios.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+        <article class="service"><div class="service-icon">◈</div><h3>Diseño UI / UX</h3><p>Interfaces intuitivas y atractivas. Diseño centrado en las personas, prototipos y sistemas visuales consistentes.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+        <article class="service"><div class="service-icon">♫</div><h3>Diseño de sonido</h3><p>Identidad sonora, edición y pequeños detalles de audio para complementar experiencias digitales y audiovisuales.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+        <article class="service"><div class="service-icon">✳</div><h3>Diseño gráfico</h3><p>Identidad visual, piezas para redes sociales y recursos gráficos que transmiten la personalidad de cada marca.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+        <article class="service"><div class="service-icon">▣</div><h3>Diseño de aplicaciones</h3><p>Flujos claros, pantallas funcionales y prototipos para convertir ideas en productos digitales fáciles de usar.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+        <article class="service"><div class="service-icon">↗</div><h3>Marketing digital</h3><p>Contenido visual y páginas de aterrizaje para mejorar la presencia online y conectar con nuevos clientes.</p><a href="#contacto">SOLICITAR SERVICIO ↗</a></article>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="section-head"><div><h2>Proyectos destacados</h2><p>Una selección de trabajos y conceptos creativos</p></div><a class="small-link" href="#contacto">¿TIENES UNA IDEA? ↗</a></div>
+      <div class="projects">
+        <article class="project"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=700&q=85" alt="Espacio de trabajo minimalista"><div class="project-body"><small>Diseño web</small><h3>Minimal Workspace</h3><p>Landing page elegante para una marca de mobiliario y espacios de trabajo.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=700&q=85" alt="Diseño gráfico colorido"><div class="project-body"><small>Branding</small><h3>Color Theory</h3><p>Identidad visual experimental con una paleta vibrante y formas geométricas.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Persona trabajando en computadora"><div class="project-body"><small>UI / UX</small><h3>Focus Dashboard</h3><p>Panel de productividad diseñado para organizar tareas y objetivos.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=700&q=85" alt="Arquitectura moderna"><div class="project-body"><small>Fotografía</small><h3>Urban Geometry</h3><p>Exploración visual de arquitectura, líneas y perspectivas urbanas.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Paisaje natural"><div class="project-body"><small>Dirección de arte</small><h3>Beyond Nature</h3><p>Concepto visual inspirado en paisajes, luz natural y aventura.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=700&q=85" alt="Consola de videojuegos retro"><div class="project-body"><small>Diseño digital</small><h3>Retro Arcade</h3><p>Una interfaz nostálgica que mezcla referencias retro con diseño actual.</p></div></article>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="section-head"><div><h2>Sobre mí</h2><p>Un poco de mi recorrido creativo</p></div></div>
+      <div class="about-grid">
+        <div class="about-card"><h3>Diseñando ideas, construyendo experiencias.</h3><p>Soy un profesional creativo apasionado por la tecnología y el diseño. Me gusta transformar problemas complejos en experiencias digitales claras, útiles y visualmente atractivas. Disfruto aprender nuevas herramientas, colaborar con otros profesionales y cuidar cada detalle de un proyecto.</p></div>
+        <div class="about-card"><div class="timeline">
+          <div class="timeline-item"><b>Senior Front-end Developer</b><span>2022 — Actualidad</span><p>Desarrollo de productos digitales, optimización y liderazgo de interfaces web.</p></div>
+          <div class="timeline-item"><b>UI / UX Designer</b><span>2019 — 2022</span><p>Investigación, prototipado y diseño de experiencias para aplicaciones.</p></div>
+          <div class="timeline-item"><b>Diseño y desarrollo web</b><span>2016 — 2019</span><p>Primeros proyectos profesionales y construcción de sitios para clientes.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="section-head"><div><h2>Hablemos de tu proyecto</h2><p>Cuéntame qué tienes en mente y lo hacemos realidad</p></div></div>
+      <div class="contact-wrap">
+        <div class="contact-info"><h3>¿Tienes una idea?</h3><p>Estoy disponible para proyectos freelance, colaboraciones y nuevas oportunidades. Puedes escribirme por cualquiera de estos medios.</p><div class="contact-line"><b>Email</b>hello@artu​​rcarter.com</div><div class="contact-line"><b>Ubicación</b>Toronto, Canadá · Trabajo remoto</div><div class="contact-line"><b>Disponibilidad</b><span style="color:var(--yellow)">● Disponible para proyectos</span></div></div>
+        <div class="contact-card"><form onsubmit="event.preventDefault(); alert('¡Gracias! Este formulario es una demostración. Conecta un servicio de formularios para recibir mensajes.');"><input type="text" placeholder="Tu nombre" aria-label="Tu nombre" required><input type="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required><input type="text" placeholder="Asunto" aria-label="Asunto"><input type="text" placeholder="Tipo de proyecto" aria-label="Tipo de proyecto"><textarea placeholder="Cuéntame sobre tu idea..." aria-label="Mensaje" required></textarea><button class="btn" type="submit">ENVIAR MENSAJE ↗</button></form></div>
+      </div>
+    </section>
+    <footer><span>© 2026 Arturo Carter. Todos los derechos reservados.</span><span>Diseñado con creatividad y mucho café ☕</span></footer>
+  </main>
+</div>
+<button class="to-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</body>
+</html>
