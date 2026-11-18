@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR — Creative Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101110;--panel:#191c19;--white:#f1f1e9;--muted:#92988f;--lime:#d4ff55;--line:#343a32}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"Space Grotesk",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+nav{height:82px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.logo{font-size:20px;font-weight:700;letter-spacing:-1.5px}.logo span{color:var(--lime)}.navlinks{display:flex;gap:28px;font:11px "DM Mono";color:var(--muted)}.navlinks a:hover{color:var(--lime)}.navbtn{border:1px solid var(--lime);color:var(--lime);padding:11px 16px;border-radius:2px;font:10px "DM Mono";letter-spacing:1px}
+.hero{padding:85px 0 75px;position:relative}.eyebrow{font:10px "DM Mono";color:var(--lime);letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(55px,10vw,130px);line-height:.88;letter-spacing:-9px;margin:25px 0 28px;max-width:980px}.hero h1 span{color:var(--lime)}.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:30px}.hero-bottom p{max-width:360px;font-size:13px;line-height:1.8;color:var(--muted)}.round-link{width:115px;height:115px;border-radius:50%;background:var(--lime);color:#111;display:grid;place-items:center;text-align:center;font:11px "DM Mono";transition:.3s}.round-link:hover{transform:rotate(-12deg) scale(1.06)}
+.hero-image{height:460px;margin-top:48px;position:relative;overflow:hidden;background:#343b31}.hero-image img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.7)}.image-label{position:absolute;bottom:20px;left:24px;font:10px "DM Mono";letter-spacing:2px}.image-index{position:absolute;right:22px;top:20px;font:11px "DM Mono";color:var(--lime)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;white-space:nowrap;overflow:hidden;font:11px "DM Mono";letter-spacing:2px;color:var(--muted)}.ticker b{color:var(--lime);padding:0 25px}
+section{padding:95px 0}.heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.heading small{font:10px "DM Mono";color:var(--lime);letter-spacing:2px}.heading h2{font-size:clamp(34px,5vw,60px);letter-spacing:-3px;line-height:1;margin:12px 0 0}.heading p{font-size:12px;line-height:1.7;color:var(--muted);max-width:260px}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project{position:relative;background:var(--panel);min-height:390px;overflow:hidden}.project:nth-child(even){margin-top:75px}.project img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;opacity:.78;transition:.6s}.project:hover img{transform:scale(1.05);opacity:.95}.project:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#080a08)}.project-info{position:absolute;bottom:22px;left:24px;right:24px;z-index:1;display:flex;justify-content:space-between;align-items:end}.project-info small{font:10px "DM Mono";color:var(--lime)}.project-info h3{font-size:25px;letter-spacing:-1px;margin:8px 0 0}.project-info i{font-style:normal;border:1px solid #ffffff88;width:42px;height:42px;display:grid;place-items:center;border-radius:50%}
+.services{background:var(--lime);color:#151713;padding:85px 0}.services .heading small{color:#4d5b25}.services .heading p{color:#566044}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #879c4b;border-left:1px solid #879c4b}.service{padding:25px;border-right:1px solid #879c4b;border-bottom:1px solid #879c4b;min-height:190px}.service .num{font:11px "DM Mono";color:#596b2b}.service h3{font-size:21px;letter-spacing:-1px;margin:28px 0 10px}.service p{font-size:11px;line-height:1.7;color:#515b3c}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.about-photo{height:470px;overflow:hidden;position:relative}.about-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}.about-photo span{position:absolute;bottom:16px;left:16px;background:var(--lime);color:#111;padding:10px;font:10px "DM Mono"}.about-text h2{font-size:clamp(36px,5vw,62px);line-height:1;letter-spacing:-3px;margin:15px 0 24px}.about-text p{font-size:13px;line-height:1.9;color:var(--muted)}.numbers{display:flex;gap:35px;margin-top:32px}.numbers strong{display:block;color:var(--lime);font-size:30px}.numbers small{font:9px "DM Mono";color:var(--muted);text-transform:uppercase}
+.quote{border:1px solid var(--line);padding:55px;text-align:center}.quote b{font-size:45px;color:var(--lime)}.quote h2{font-size:clamp(24px,4vw,43px);letter-spacing:-2px;max-width:800px;margin:10px auto 20px}.quote p{font:10px "DM Mono";color:var(--muted);letter-spacing:2px}
+.contact{background:#1a1e19;padding:80px 0 25px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px}.contact h2{font-size:clamp(45px,7vw,85px);line-height:.9;letter-spacing:-6px;margin:20px 0}.contact p{font-size:12px;color:var(--muted);line-height:1.8;max-width:350px}.email{display:inline-block;margin-top:20px;color:var(--lime);border-bottom:1px solid var(--lime);padding-bottom:7px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,textarea{background:#242a23;border:1px solid #3d463b;padding:15px;color:white;font:11px "DM Mono";outline:none;width:100%}input:focus,textarea:focus{border-color:var(--lime)}textarea{grid-column:1/-1;min-height:130px;resize:vertical}button{background:var(--lime);border:0;padding:15px 22px;font:11px "DM Mono";cursor:pointer;color:#111;justify-self:start}
+footer{border-top:1px solid var(--line);margin-top:75px;padding-top:20px;display:flex;justify-content:space-between;color:var(--muted);font:9px "DM Mono"}
+.fade{opacity:0;transform:translateY(25px);transition:.7s}.fade.show{opacity:1;transform:none}
+@media(max-width:700px){.wrap{width:calc(100% - 32px)}.navlinks{display:none}.hero{padding:65px 0 50px}.hero h1{letter-spacing:-5px}.hero-bottom{align-items:start}.round-link{width:90px;height:90px;flex-shrink:0}.hero-image{height:330px}.heading{display:block}.heading p{margin-top:15px}.projects{grid-template-columns:1fr}.project,.project:nth-child(even){margin:0;min-height:330px}.service-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.about-photo{height:350px}.quote{padding:35px 20px}footer{gap:12px;flex-direction:column}}
+@media(max-width:430px){.service-grid{grid-template-columns:1fr}.hero h1{font-size:57px}.hero-bottom p{font-size:11px}.numbers{gap:20px}.numbers strong{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#inicio">NOIR<span>®</span></a><div class="navlinks"><a href="#work">TRABAJOS</a><a href="#services">SERVICIOS</a><a href="#about">ESTUDIO</a></div><a class="navbtn" href="#contact">HABLEMOS ↗</a></nav>
+<header class="hero" id="inicio">
+<div class="eyebrow">PORTAFOLIO INDEPENDIENTE / 2026</div>
+<h1>MAKE IT<br><span>MATTER.</span></h1>
+<div class="hero-bottom"><p>Diseño experiencias digitales, identidades visuales y sitios web con personalidad. Menos ruido. Más intención. Ideas que dejan huella.</p><a class="round-link" href="#work">EXPLORAR<br>PROYECTOS<br>↓</a></div>
+<div class="hero-image"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=90" alt="Paisaje surrealista de montañas al atardecer"><div class="image-index">[ 001 — VISUAL THINKING ]</div><div class="image-label">CREATIVITY IS A WAY OF SEEING.</div></div>
+</header>
+</div>
+<div class="ticker">ESTRATEGIA <b>✳</b> DISEÑO <b>✳</b> DESARROLLO <b>✳</b> DIRECCIÓN DE ARTE <b>✳</b> EXPERIENCIAS DIGITALES <b>✳</b> ESTRATEGIA</div>
+<div class="wrap">
+<section id="work"><div class="heading fade"><div><small>01 / PROYECTOS SELECCIONADOS</small><h2>Selected work.</h2></div><p>Ideas convertidas en experiencias visuales. Cada proyecto tiene su propio lenguaje.</p></div>
+<div class="projects">
+<a class="project fade" href="#contact"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1100&q=85" alt="Instalación artística inmersiva"><div class="project-info"><div><small>EXPERIENCIA / 2026</small><h3>Beyond the Frame</h3></div><i>↗</i></div></a>
+<a class="project fade" href="#contact"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1100&q=85" alt="Composición de diseño gráfico"><div class="project-info"><div><small>IDENTIDAD / 2025</small><h3>New Ritual</h3></div><i>↗</i></div></a>
+<a class="project fade" href="#contact"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=85" alt="Estudio de arquitectura minimalista"><div class="project-info"><div><small>WEB DESIGN / 2025</small><h3>Open Spaces</h3></div><i>↗</i></div></a>
+<a class="project fade" href="#contact"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=85" alt="Fotografía editorial de moda"><div class="project-info"><div><small>ART DIRECTION / 2024</small><h3>Human Form</h3></div><i>↗</i></div></a>
+</div></section>
+</div>
+<section class="services" id="services"><div class="wrap"><div class="heading fade"><div><small>02 / CAPACIDADES</small><h2>What I do.</h2></div><p>Un proceso flexible, desde la primera idea hasta el lanzamiento final.</p></div>
+<div class="service-grid">
+<article class="service"><span class="num">01 —</span><h3>Digital Design</h3><p>Interfaces web, diseño responsive y experiencias pensadas para usuarios reales.</p></article>
+<article class="service"><span class="num">02 —</span><h3>Brand Identity</h3><p>Logotipos, sistemas visuales y dirección creativa para marcas con carácter.</p></article>
+<article class="service"><span class="num">03 —</span><h3>Development</h3><p>Desarrollo front-end con atención al rendimiento, accesibilidad y detalle.</p></article>
+<article class="service"><span class="num">04 —</span><h3>Art Direction</h3><p>Conceptos visuales, fotografía y campañas con una narrativa coherente.</p></article>
+<article class="service"><span class="num">05 —</span><h3>Motion & Content</h3><p>Contenido digital, animaciones y recursos visuales para comunicar mejor.</p></article>
+<article class="service"><span class="num">06 —</span><h3>Creative Strategy</h3><p>Investigación, definición de objetivos y conceptos que dan sentido al diseño.</p></article>
+</div></div></section>
+<div class="wrap">
+<section id="about"><div class="about-grid"><div class="about-photo fade"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85" alt="Equipo creativo colaborando en un estudio"><span>INDEPENDENT CREATIVE PRACTICE — EST. 2020</span></div><div class="about-text fade"><div class="eyebrow">03 / QUIÉN ESTÁ DETRÁS</div><h2>Good ideas deserve great execution.</h2><p>Soy Alex, creativo digital y desarrollador visual. Me interesa el punto donde el diseño se encuentra con la tecnología. Trabajo con personas y marcas que quieren comunicar algo auténtico, sin fórmulas repetidas.</p><p>Mi proceso combina investigación, exploración visual y desarrollo. Creo en las ideas simples, en los detalles cuidados y en hacer que cada decisión tenga un propósito.</p><div class="numbers"><div><strong>06+</strong><small>Años creando</small></div><div><strong>40</strong><small>Proyectos</small></div><div><strong>18</strong><small>Colaboraciones</small></div></div></div></div></section>
+<div class="quote fade"><b>“</b><h2>Make something meaningful. Make it memorable. Make it matter.</h2><p>NOIR CREATIVE STUDIO — PRINCIPIO #01</p></div>
+</div>
+<section class="contact" id="contact"><div class="wrap"><div class="contact-grid"><div><div class="eyebrow">04 / EMPECEMOS ALGO</div><h2>Have a good one in mind?</h2><p>Si tienes una idea, una marca o un proyecto que necesita una nueva perspectiva, me encantaría conocerlo.</p><a class="email" href="mailto:hello@noirstudio.design">hello@noirstudio.design ↗</a></div>
+<form onsubmit="event.preventDefault();alert('¡Gracias! Este formulario es una demostración. Conecta un servicio de formularios para recibir mensajes.');"><input required placeholder="Tu nombre" aria-label="Tu nombre"><input required type="email" placeholder="Tu email" aria-label="Tu email"><input placeholder="Tipo de proyecto" aria-label="Tipo de proyecto" style="grid-column:1/-1"><textarea required placeholder="Cuéntame tu idea..." aria-label="Mensaje"></textarea><button type="submit">ENVIAR MENSAJE ↗</button></form></div>
+<footer><span>© 2026 NOIR® — CREATIVE PORTFOLIO</span><span>QUITO, ECUADOR · DISPONIBLE EN TODO EL MUNDO</span></footer></div></section>
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(item=>observer.observe(item));
+</script>
+</body></html>
